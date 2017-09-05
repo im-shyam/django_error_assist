@@ -21,26 +21,15 @@ OR
 DJANGO_ERROR_ASSIST_FROM = 'stackoverflow'
 ```
 and now we should add the Middleware in `settings.py` as shown below:
-(django version <= 1.8)
+(tested and proved to work from django version >= 1.10)
 ```
-if DEBUG is True:
-    MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('django_error_assist.DjangoErrorAssistMiddleware',)
-```
-(django version = 1.9)
-```
-if DEBUG is True:
-    MIDDLEWARE_CLASSES += ['django_error_assist.DjangoErrorAssistMiddleware']
-```
-(django version >= 1.10)
-```
-if DEBUG is True:
-    MIDDLEWARE += ['django_error_assist.DjangoErrorAssistMiddleware']
+ MIDDLEWARE += ['django_error_assist.middleware.DjangoErrorAssistMiddleware']
 ```
 and you are done!
 
-**NOTE: By default 'stackoverflow' is the chosen one for you**
+**NOTE 1: By default 'stackoverflow' is the chosen one for you**
+**NOTE 2 : This works only when DEBUG is set to True**
 
 After this step whenever you encounter an error you should see a link under the error. 
 By clicking on the link it'll will take you the result page of google/stackoverflow (based on your preference) about the error in the new tab.
-
-**P.S : This works only when DEBUG is set to True**
+Happy Djangoing!
