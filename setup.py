@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='django_error_assist',
-      version='0.1.3',
+      version='0.1.4',
       description='Allows user to search the django errors on google/stackoverflow with a link.',
       url='http://github.com/im-shyam/django_error_assist',
       author='Shyam Satyaprasad',
